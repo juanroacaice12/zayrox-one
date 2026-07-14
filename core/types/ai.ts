@@ -5,6 +5,11 @@ export interface ChatMessage {
   createdAt: Date;
 }
 
+export interface ProviderChatMessage {
+  role: "system" | "user" | "assistant";
+  content: string;
+}
+
 export interface AIRequest {
   message: string;
   conversationId?: string;

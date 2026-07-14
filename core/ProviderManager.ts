@@ -1,15 +1,11 @@
 import { OpenAIProvider } from "./providers/OpenAIProvider";
-
-interface ChatMessage {
-  role: "system" | "user" | "assistant";
-  content: string;
-}
+import { ProviderChatMessage } from "./types/ai";
 
 export class ProviderManager {
 
   private provider = new OpenAIProvider();
 
-  async chat(messages: ChatMessage[]) {
+  async chat(messages: ProviderChatMessage[]) {
 
     return this.provider.chat(messages);
 
